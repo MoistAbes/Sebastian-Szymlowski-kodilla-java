@@ -1,6 +1,7 @@
 package com.kodilla.good.patterns.main;
 
 import com.kodilla.good.patterns.challanges.*;
+import com.kodilla.good.patterns.food2door.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,5 +26,22 @@ public class GoodPatternsModuleRunner {
 
         OrderProcessor orderProcessor = new OrderProcessor(new MailService(), new ProductOrderService(), new ProductOrderRepository());
         orderProcessor.process(orderRequest);
+
+        System.out.println("");
+
+        //Challange 13.4 Food2Door
+        FoodOrderRequestRetriever foodOrderRequestRetriever = new FoodOrderRequestRetriever();
+        FoodOrderRequest foodOrderRequest = foodOrderRequestRetriever.retrieve();
+
+        ExtraFoodShop extraFoodShop = new ExtraFoodShop(new FoodProductOrderService(), new FoodProductOrderRepository());
+        extraFoodShop.process(foodOrderRequest);
+
+        HealthyShop healthyShop = new HealthyShop(new FoodProductOrderService(), new FoodProductOrderRepository());
+        healthyShop.process(foodOrderRequest);
+
+        GlutenFreeShop glutenFreeShop = new GlutenFreeShop(new FoodProductOrderService(), new FoodProductOrderRepository());
+        glutenFreeShop.process(foodOrderRequest);
+
+
     }
 }

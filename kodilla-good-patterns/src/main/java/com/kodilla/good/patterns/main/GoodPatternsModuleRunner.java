@@ -1,6 +1,7 @@
 package com.kodilla.good.patterns.main;
 
 import com.kodilla.good.patterns.challanges.*;
+import com.kodilla.good.patterns.flights.*;
 import com.kodilla.good.patterns.food2door.*;
 
 import java.util.ArrayList;
@@ -41,6 +42,27 @@ public class GoodPatternsModuleRunner {
 
         GlutenFreeShop glutenFreeShop = new GlutenFreeShop(new FoodProductOrderService(), new FoodProductOrderRepository());
         glutenFreeShop.process(foodOrderRequest);
+
+        System.out.println("");
+
+        //Challange 13.5 Flights
+        FlightsCreator flightsCreator = new FlightsCreator();
+        FlightsDatabase flightsDatabase = new FlightsDatabase(flightsCreator.createFlights());
+
+        System.out.println("cala lista");
+        System.out.println(flightsDatabase.getFlightList());
+
+        SearchRequestRetriever searchRequestRetriever = new SearchRequestRetriever();
+        SearchRequest searchRequestFrom = searchRequestRetriever.retrieveSearchFrom();
+        SearchRequest searchRequestTo = searchRequestRetriever.retrieveSearchTo();
+        SearchRequest searchRequestVia = searchRequestRetriever.retrieveSearchVia();
+
+        FlightsSearchProcessor flightsSearchProcessor = new FlightsSearchProcessor(new FlightSearchService(flightsDatabase.getFlightList()));
+        flightsSearchProcessor.processSearchFlightsFrom(searchRequestFrom);
+        flightsSearchProcessor.processSearchFlightsTo(searchRequestTo);
+        flightsSearchProcessor.processSearchFlightsVia(searchRequestVia);
+
+
 
 
     }

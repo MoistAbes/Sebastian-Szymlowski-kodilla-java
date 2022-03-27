@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Calculator {
 
+    //14.2
+
     @Autowired
     private Display display;
 

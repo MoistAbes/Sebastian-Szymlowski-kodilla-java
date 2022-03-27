@@ -20,7 +20,7 @@ public class ReaderTestSuite {
     }
 
 
-    /*
+
     @Test
     void testConditional() {
         //Given
@@ -32,7 +32,7 @@ public class ReaderTestSuite {
     }
 
 
-     */
+
 
 
 

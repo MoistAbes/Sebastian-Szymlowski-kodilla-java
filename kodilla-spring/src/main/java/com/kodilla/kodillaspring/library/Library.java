@@ -6,13 +6,20 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+
 public class Library {
     private final List<String> books = new ArrayList<>();
-    //private LibraryDbController libraryDbController;
+    private LibraryDbController libraryDbController;
 
+    //Wtrzykiwanie zaleznosci przez wlasciwosc klasy
+    /*
     @Autowired
     private LibraryDbController libraryDbController;
+
+     */
+    public Library(final LibraryDbController libraryDbController) {
+        this.libraryDbController = libraryDbController;
+    }
 
     public Library() {
     }

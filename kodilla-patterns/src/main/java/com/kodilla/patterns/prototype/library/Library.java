@@ -7,6 +7,8 @@ import java.util.Set;
 
 public class Library extends Prototype<Library> {
 
+    //15.2
+
     private String name;
     private Set<Book> books = new HashSet<>();
 

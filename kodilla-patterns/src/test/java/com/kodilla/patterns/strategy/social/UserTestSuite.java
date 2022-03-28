@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 public class UserTestSuite {
 
+    //15.3
+
     @Test
     void testDefaultSharingStrategies(){
         //Given

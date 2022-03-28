@@ -1,6 +1,9 @@
 package com.kodilla.patterns.strategy.social;
 
 public class User {
+
+    //15.3
+
     private final String name;
     protected SocialPublisher socialPublisher;
 

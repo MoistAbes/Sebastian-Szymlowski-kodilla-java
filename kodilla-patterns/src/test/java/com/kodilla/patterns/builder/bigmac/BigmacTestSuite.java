@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BigmacTestSuite {
 
+    //15.5
+
     @Test
     void testBigmacNew(){
         //Given

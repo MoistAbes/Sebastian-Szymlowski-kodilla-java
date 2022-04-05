@@ -5,6 +5,8 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+//17.4
+
 @NamedNativeQuery(
         name = "Company.retrieveNameWithThreeFirstLetters",
         query = "SELECT * FROM COMPANIES" +

@@ -7,6 +7,8 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
+//17.4
+
 public interface CompanyDao extends CrudRepository<Company, Integer> {
 
     @Query(nativeQuery = true)

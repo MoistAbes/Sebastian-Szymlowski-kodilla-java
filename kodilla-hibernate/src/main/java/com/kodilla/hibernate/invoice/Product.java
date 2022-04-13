@@ -6,6 +6,7 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+//17.3
 @Entity
 @Table(name = "PRODUCTS")
 public class Product {
@@ -13,7 +14,7 @@ public class Product {
 
     private int id;
     private String name;
-   // private List<Item> items = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
 
     public Product() {
     }
@@ -22,12 +23,12 @@ public class Product {
         this.name = name;
     }
 
-    /*
+
     @OneToMany(
             targetEntity = Item.class,
             mappedBy = "product",
             cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
+            fetch = FetchType.LAZY
     )
     public List<Item> getItems() {
         return items;
@@ -37,7 +38,7 @@ public class Product {
         this.items = items;
     }
 
-     */
+
 
     @Id
     @GeneratedValue

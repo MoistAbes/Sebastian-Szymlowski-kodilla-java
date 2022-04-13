@@ -4,11 +4,12 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
+//17.3
 @Entity
 @Table(name = "ITEMS")
 public class Item {
     private int id;
-    //private Product product;
+    private Product product;
     private BigDecimal price;
     private int quantity;
     private BigDecimal value;
@@ -33,7 +34,7 @@ public class Item {
         this.invoice = invoice;
     }
 
-    /*
+
     @ManyToOne
     @JoinColumn(name = "PRODUCT_ID")
     public Product getProduct() {
@@ -44,7 +45,7 @@ public class Item {
         this.product = product;
     }
 
-     */
+
 
     @Id
     @GeneratedValue

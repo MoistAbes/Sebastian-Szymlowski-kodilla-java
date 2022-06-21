@@ -14,6 +14,13 @@ import java.util.List;
         resultClass = Company.class
 )
 
+@NamedNativeQuery(
+        name = "Company.retrieveCompanyWithAnyTextFragment",
+        query = "SELECT * FROM COMPANIES" +
+                " WHERE COMPANY_NAME LIKE :CHARACTERS",
+        resultClass = Company.class
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

@@ -2,6 +2,7 @@ package com.kodilla.hibernate.manytomany.dao;
 
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
+import com.kodilla.hibernate.manytomany.facade.CompanyEmployeeFacade;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,6 +22,13 @@ public class CompanyDaoTestSuite {
 
     @Autowired
     private EmployeeDao employeeDao;
+
+    @Autowired
+    private CompanyEmployeeFacade companyEmployeeFacade;
+
+
+
+
 
     @Test
     void testSaveManyToMany(){
@@ -67,6 +75,8 @@ public class CompanyDaoTestSuite {
             //do nothing
         }
     }
+
+
 
     @Test
     void testCompanyNamedQueries(){
